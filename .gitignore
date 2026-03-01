@@ -39,3 +39,15 @@
 
 # debug information files
 *.dwo
+
+#vs 
+.vs/
+.x64/
+*.slnx
+*.vcxproj
+*.idb
+*.tlog
+*.log
+*.recipe
+*filters
+*user
