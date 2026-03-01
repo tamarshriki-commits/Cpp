@@ -12,7 +12,7 @@ public:
 	void setWeight(int weight) { weight_ = weight; }
 	void setName(const std::string& name) { name_ = name; }
 private:
-	int weight_;
+	int weight_ = 0;
 	std::string name_;
 };
 
