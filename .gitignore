@@ -49,5 +49,6 @@
 *.tlog
 *.log
 *.recipe
-*filters
-*user
+*.filters
+*.user
+*.enc
