@@ -1,12 +1,17 @@
 #pragma once
 #include "Plus.h"
 #include "Minus.h"
+#include "Multiplication.h"
+#include "Division.h"
 #include <array>
 
 template<typename T>
-using ruleFunc = void(*)(std::vector<std::unique_ptr<Token<T>>>&, size_t, size_t);
+using RuleFunc = size_t(*)(std::vector<std::unique_ptr<Token<T>>>&, size_t, size_t);
 
 template<typename T>
-void plusMinusRule(std::vector<std::unique_ptr<Token<T>>>& tokens, size_t begin, size_t end);
+size_t plusMinusRule(std::vector<std::unique_ptr<Token<T>>>& tokens, size_t begin, size_t end);
+
+template<typename T>
+size_t multiplyDivideRule(std::vector<std::unique_ptr<Token<T>>>& tokens, size_t begin, size_t end);
 
 #include "Rules.tcc"

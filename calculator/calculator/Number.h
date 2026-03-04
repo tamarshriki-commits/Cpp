@@ -1,5 +1,7 @@
 #pragma once
 #include "Token.h"
+#include <iostream>
+
 template <typename T>
 class Number :
     public Token<T>
@@ -7,6 +9,8 @@ class Number :
 public:
     Number<T>(T value) : value_(value) {}
     T getValue() { return value_; }
+    void printValue() { std::cout << value_ << '\n'; }
+    void addValue(T amount) { value_ += amount; }
 
 private:
     T value_;

@@ -1,19 +1,26 @@
 #pragma once
 #include "Rules.h"
+#include "Parsing.h"
 #include "ClosingBracket.h"
 #include "OpeningBracket.h"
 #include <stdexcept>
+#include <string>
 
-template <typename T, size_t N>
+template <typename T>
 class Calculator
 {
 public:
-	Calculator(const std::array<ruleFunc<T>, N>& rules) : rules_(rules) {}
+	Calculator() = default;
+	Calculator(const std::vector<RuleFunc<T>>& rules, const std::vector<ParsingFunc<T>>& parsingFunc)
+		: rules_(rules), parsingFunc_(parsingFunc) {}
+	virtual std::unique_ptr<std::vector<std::unique_ptr<Token<T>>>> parse(std::string& input) = 0;
 	std::unique_ptr<Token<T>> solve(std::vector<std::unique_ptr<Token<T>>>& tokens, size_t begin, size_t end);
 
-private:
-	std::array<ruleFunc<T>, N> rules_;
-	size_t findClosingBracket(std::vector<std::unique_ptr<Token<T>>>& tokens, size_t begin);
+protected:
+	std::vector<ParsingFunc<T>> parsingFunc_;
+	std::vector<RuleFunc<T>> rules_;
+	void removeWhitespace_(std::string& s);
+	size_t findClosingBracket_(std::vector<std::unique_ptr<Token<T>>>& tokens, size_t begin);
 };
 
 #include "Calculator.tcc"
