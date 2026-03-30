@@ -4,7 +4,7 @@ Interface::Interface() {
 	std::vector<ParsingFunc<int>> parsingFuncBasic =
 	{ &parsingPlus<int>, &parsingMinus<int>, &parsingOpenBracket<int>,  &parsingCloseBracket<int>,
 	&parsingMultiply<int>, &parsingDivision<int>};
-	BasicCalc_ = IntCalc(rulesBasic, parsingFuncBasic);
+	basicCalc_ = IntCalc(rulesBasic, parsingFuncBasic);
 	std::vector<RuleFunc<double>> rulesAdvanced = { &powSqrtRule<double>, &multiplyDivideRule<double>, &plusMinusRule<double> };
 	std::vector<ParsingFunc<double>> parsingFuncAdvanced =
 	{ &parsingPlus<double>, &parsingMinus<double>, &parsingOpenBracket<double>,  &parsingCloseBracket<double>,
@@ -22,8 +22,8 @@ void Interface::process() {
 				std::cout << "Enter expression" << '\n';
 				std::getline(std::cin, input);
 				if (input == "0") break;
-				auto tokens = BasicCalc_.parse(input);
-				auto result = BasicCalc_.solve(*tokens, 0, tokens->size() - 1);
+				auto tokens = basicCalc_.parse(input);
+				auto result = basicCalc_.solve(*tokens, 0, tokens->size() - 1);
 				if (auto* num = dynamic_cast<Number<int>*>(result.get())) {
 					num->printValue();
 				}
