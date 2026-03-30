@@ -53,3 +53,19 @@ std::unique_ptr<Token<T>> parsingDot(char c) {
 	}
 	else return nullptr;
 }
+
+template<typename T>
+std::unique_ptr<Token<T>> parsingPow(char c) {
+	if (c == '^') {
+		return std::make_unique<Pow<T>>();
+	}
+	else return nullptr;
+}
+
+template<typename T>
+std::unique_ptr<Token<T>> parsingSqrt(char c) {
+	if (c == '@') {
+		return std::make_unique<Sqrt<T>>();
+	}
+	else return nullptr;
+}
