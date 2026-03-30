@@ -8,6 +8,6 @@ public:
 	Interface();
 	void process();
 private:
-	IntCalc basicCalculator_;
+	IntCalc basicCalc_;
 };
 

@@ -14,4 +14,4 @@ public:
         std::unique_ptr<Token<T>>& right);
 };
 
-#include "Minus.tcc"
+#include "minus.tcc"
