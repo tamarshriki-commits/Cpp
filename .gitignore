@@ -43,6 +43,7 @@
 #vs 
 .vs/
 .x64/
+*.sln
 *.slnx
 *.vcxproj
 *.idb
