@@ -1,4 +1,4 @@
-#include "IntCalc.h"
+#include "intCalc.h"
 std::unique_ptr<std::vector<std::unique_ptr<Token<int>>>> IntCalc::parse(std::string& input) {
 	auto tokens = std::make_unique<std::vector<std::unique_ptr<Token<int>>>>();
 	removeWhitespace_(input);

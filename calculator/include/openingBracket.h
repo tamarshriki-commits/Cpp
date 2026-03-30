@@ -1,5 +1,6 @@
 #pragma once
-#include "Token.h"
+
+#include "token.h"
 
 template <typename T>
 class OpeningBracket :

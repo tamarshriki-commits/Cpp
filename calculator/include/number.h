@@ -1,5 +1,6 @@
 #pragma once
-#include "Token.h"
+
+#include "token.h"
 #include <iostream>
 
 template <typename T>

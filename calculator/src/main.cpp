@@ -1,5 +1,5 @@
-#include "IntCalc.h"
-#include "Interface.h"
+#include "intCalc.h"
+#include "interface.h"
 int main() {
 	Interface interface;
 	interface.process();

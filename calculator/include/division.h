@@ -1,6 +1,6 @@
 #pragma once
-#include "Token.h"
-#include "Number.h"
+#include "token.h"
+#include "number.h"
 #include <memory>
 #include <stdexcept>
 
@@ -13,4 +13,4 @@ public:
         std::unique_ptr<Token<T>>& right);
 };
 
-#include "Division.tcc"
+#include "division.tcc"

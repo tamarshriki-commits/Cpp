@@ -1,8 +1,9 @@
 #pragma once
-#include "Plus.h"
-#include "Minus.h"
-#include "Multiplication.h"
-#include "Division.h"
+
+#include "plus.h"
+#include "minus.h"
+#include "multiplication.h"
+#include "division.h"
 #include <array>
 
 template<typename T>
@@ -14,4 +15,4 @@ size_t plusMinusRule(std::vector<std::unique_ptr<Token<T>>>& tokens, size_t begi
 template<typename T>
 size_t multiplyDivideRule(std::vector<std::unique_ptr<Token<T>>>& tokens, size_t begin, size_t end);
 
-#include "Rules.tcc"
+#include "rules.tcc"

@@ -1,5 +1,6 @@
 #pragma once
-#include "IntCalc.h"
+
+#include "intCalc.h"
 #include <iostream>
 class Interface
 {

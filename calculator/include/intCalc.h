@@ -1,5 +1,6 @@
 #pragma once
-#include "Calculator.h"
+
+#include "calculator.h"
 #include <cmath>
 class IntCalc :
     public Calculator<int>

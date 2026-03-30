@@ -1,8 +1,9 @@
 #pragma once
-#include "Rules.h"
-#include "Parsing.h"
-#include "ClosingBracket.h"
-#include "OpeningBracket.h"
+
+#include "rules.h"
+#include "parsing.h"
+#include "closingBracket.h"
+#include "openingBracket.h"
 #include <stdexcept>
 #include <string>
 
@@ -23,4 +24,4 @@ protected:
 	size_t findClosingBracket_(std::vector<std::unique_ptr<Token<T>>>& tokens, size_t begin);
 };
 
-#include "Calculator.tcc"
+#include "calculator.tcc"

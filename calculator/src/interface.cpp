@@ -1,4 +1,4 @@
-#include "Interface.h"
+#include "interface.h"
 Interface::Interface() {
 	std::vector<RuleFunc<int>> rules = { &multiplyDivideRule<int>, &plusMinusRule<int> };
 	std::vector<ParsingFunc<int>> parsingFunc = 

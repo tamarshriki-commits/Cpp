@@ -1,10 +1,11 @@
 #pragma once
-#include "Plus.h"
-#include "Minus.h"
-#include "OpeningBracket.h"
-#include "ClosingBracket.h"
-#include "Multiplication.h"
-#include "Division.h"
+
+#include "plus.h"
+#include "minus.h"
+#include "openingBracket.h"
+#include "closingBracket.h"
+#include "multiplication.h"
+#include "division.h"
 #include <array>
 
 template<typename T>
@@ -28,4 +29,4 @@ std::unique_ptr<Token<T>> parsingMultiply(char c);
 template<typename T>
 std::unique_ptr<Token<T>> parsingDivision(char c);
 
-#include "Parsing.tcc"
+#include "parsing.tcc"
