@@ -43,11 +43,13 @@
 #vs 
 .vs/
 .x64/
+*.sln
 *.slnx
 *.vcxproj
 *.idb
 *.tlog
 *.log
 *.recipe
-*filters
-*user
+*.filters
+*.user
+*.enc
