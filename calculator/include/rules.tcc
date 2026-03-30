@@ -35,7 +35,7 @@ size_t multiplyDivideRule(std::vector<std::unique_ptr<Token<T>>>& tokens, size_t
             auto result = multiplication->multiply(tokens[i - 1], tokens[i + 1]);
             tokens[i - 1] = std::move(result);
 
-            tokens.erase(tokens.begin() + i + 1, tokens.begin() + i + 2);
+            tokens.erase(tokens.begin() + i, tokens.begin() + i + 2);
             end = end - 2;
             erasedAmount +=2;
         }
