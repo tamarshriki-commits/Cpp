@@ -16,6 +16,21 @@ std::unique_ptr<std::vector<std::unique_ptr<Token<int>>>> IntCalc::parse(std::st
 			tokens->push_back(std::make_unique<Number<int>>(value));
 		}
 	}
+
+	for (size_t i = tokens->size(); i-- > 0;) {
+		auto* num = dynamic_cast<Number<int>*>((*tokens)[i].get());
+		if (!num) continue;
+		size_t j = 0;
+		while (i > 0) {
+			auto* prevNum = dynamic_cast<Number<int>*>((*tokens)[i - 1].get());
+			if (!prevNum) break;
+			j++;
+			num->addValue(prevNum->getValue() * std::pow(10, j));
+			tokens->erase(tokens->begin() + i - 1);
+			i--;
+		}
+	}
+
 	if (auto* minus = dynamic_cast<Minus<int>*>((*tokens)[0].get())) {
 		tokens->insert(tokens->begin(), std::make_unique<Number<int>>(0));
 	}
@@ -38,18 +53,5 @@ std::unique_ptr<std::vector<std::unique_ptr<Token<int>>>> IntCalc::parse(std::st
 		}
 	}
 
-	for (size_t i = tokens->size(); i-- > 0;) {
-		auto* num = dynamic_cast<Number<int>*>((*tokens)[i].get());
-		if (!num) continue;
-		size_t j = 0;
-		while (i > 0) {
-			auto* prevNum = dynamic_cast<Number<int>*>((*tokens)[i - 1].get());
-			if (!prevNum) break;
-			j++;
-			num->addValue(prevNum->getValue() * std::pow(10, j));
-			tokens->erase(tokens->begin() + i - 1);
-			i--;
-		}
-	}
 	return std::move(tokens);
 }
