@@ -4,6 +4,8 @@
 #include "minus.h"
 #include "multiplication.h"
 #include "division.h"
+#include "pow.h"
+#include "sqrt.h"
 #include <array>
 
 template<typename T>
@@ -14,5 +16,8 @@ size_t plusMinusRule(std::vector<std::unique_ptr<Token<T>>>& tokens, size_t begi
 
 template<typename T>
 size_t multiplyDivideRule(std::vector<std::unique_ptr<Token<T>>>& tokens, size_t begin, size_t end);
+
+template<typename T>
+size_t powSqrtRule(std::vector<std::unique_ptr<Token<T>>>& tokens, size_t begin, size_t end);
 
 #include "rules.tcc"
