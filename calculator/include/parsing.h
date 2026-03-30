@@ -6,6 +6,7 @@
 #include "closingBracket.h"
 #include "multiplication.h"
 #include "division.h"
+#include "dot.h"
 #include <array>
 
 template<typename T>
@@ -28,5 +29,8 @@ std::unique_ptr<Token<T>> parsingMultiply(char c);
 
 template<typename T>
 std::unique_ptr<Token<T>> parsingDivision(char c);
+
+template<typename T>
+std::unique_ptr<Token<T>> parsingDot(char c);
 
 #include "parsing.tcc"

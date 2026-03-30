@@ -4,6 +4,7 @@
 #include "parsing.h"
 #include "closingBracket.h"
 #include "openingBracket.h"
+#include "dot.h"
 #include <stdexcept>
 #include <string>
 

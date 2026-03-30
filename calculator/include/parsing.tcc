@@ -45,3 +45,11 @@ std::unique_ptr<Token<T>> parsingDivision(char c) {
 	}
 	else return nullptr;
 }
+
+template<typename T>
+std::unique_ptr<Token<T>> parsingDot(char c) {
+	if (c == '.') {
+		return std::make_unique<Dot<T>>();
+	}
+	else return nullptr;
+}
